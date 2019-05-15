@@ -1,14 +1,21 @@
 package com.vividseats.minivivid.common.checkout;
 
+import javax.persistence.Entity;
+
+@Entity
+@SuppressWarnings("unused")
 public class Order {
 
-    private int OrderId;
-    private int UserId;
+    private String OrderId;
+    private String UserId;
     private String Status;
     private int Price;
     private String Item;
 
-    public Order(int orderId, int userId, String status, int price, String item) {
+    public Order() {
+    }
+
+    public Order(String orderId, String userId, String status, int price, String item) {
         OrderId = orderId;
         UserId = userId;
         Status = status;
@@ -16,19 +23,30 @@ public class Order {
         Item = item;
     }
 
-    public int getOrderId() {
+    @Override
+    public String toString() {
+        return "Order{" +
+                "OrderId=" + OrderId +
+                ", UserId=" + UserId +
+                ", Status='" + Status + '\'' +
+                ", Price=" + Price +
+                ", Item='" + Item + '\'' +
+                '}';
+    }
+
+    public String getOrderId() {
         return OrderId;
     }
 
-    public void setOrderId(int orderId) {
+    public void setOrderId(String orderId) {
         OrderId = orderId;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return UserId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         UserId = userId;
     }
 

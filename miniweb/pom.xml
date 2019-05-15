@@ -23,7 +23,8 @@
     <modules>
         <module>common</module>
         <module>checkout</module>
-        <module>mini-web</module>
+        <module>web</module>
+        <module>payment</module>
     </modules>
 
     <dependencies>

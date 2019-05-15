@@ -8,10 +8,10 @@
         <version>0.0.1-SNAPSHOT</version>
 	    <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>mini-web</artifactId>
+    <artifactId>minivivid-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mini-web</name>
-    <description>Mini vivid ordering system</description>
+    <name>web</name>
+    <description>MiniVivid ordering system</description>
 
     <dependencies>
         <dependency>
