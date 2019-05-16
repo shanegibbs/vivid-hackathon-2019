@@ -17,8 +17,10 @@ public class PaymentProcessor {
     private RabbitTemplate rabbitTemplate;
 
     @RabbitListener(queues = "Payments.NewOrders")
-    public void processOrderPayments(Order in) {
+    public void processOrderPayments(Order in) throws InterruptedException {
         System.out.println("Received " + in);
+
+        Thread.sleep(1000);
 
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();

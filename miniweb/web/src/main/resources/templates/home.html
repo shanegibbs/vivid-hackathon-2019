@@ -1,7 +1,16 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
-<head><title>Home Page</title></head>
+<head><title>Vividseats Mini</title></head>
 <body>
-<h1>Hello !</h1>
-<p>Welcome to <span th:text="${appName}">Our App</span></p>
+<h1>Vividseats Mini</h1>
+<p>Place your order:</p>
+<form method="post">
+    UserID
+    <input type="text" name="userId" value="1234" /><br />
+    Item
+    <input type="text" name="item" value="Queen and Adam Lambert" /><br />
+    Price
+    <input type="text" name="price" value="367.00" /><br />
+    <input type="submit" />
+</form>
 </body>
 </html>

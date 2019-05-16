@@ -25,6 +25,7 @@
         <module>checkout</module>
         <module>web</module>
         <module>payment</module>
+        <module>fulfillment</module>
     </modules>
 
     <dependencies>
