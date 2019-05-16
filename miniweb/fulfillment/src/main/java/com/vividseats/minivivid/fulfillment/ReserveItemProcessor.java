@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
 
 @Component
 @SuppressWarnings("unused")
@@ -21,6 +22,8 @@ public class ReserveItemProcessor {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
+
+    private static int retries = 3;
 
     @RabbitListener(queues = "Fulfillment.NewOrders")
     public void reserveItem(Order in) throws InterruptedException {
@@ -33,6 +36,17 @@ public class ReserveItemProcessor {
 
         try {
             Thread.sleep(100);
+
+            if ("12345".equals(in.getUserId())) {
+                retries -= 1;
+                if (retries <= 0) {
+                    retries = 3;
+                    return;
+                }
+                throw new RuntimeException("Item already reserved");
+            }
+
+            retries = 3;
         } finally {
             span.finish();
         }

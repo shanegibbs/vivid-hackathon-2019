@@ -1,4 +1,4 @@
-TAG=shanegibbs/miniweb:3
+TAG=shanegibbs/miniweb:5
 
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 
